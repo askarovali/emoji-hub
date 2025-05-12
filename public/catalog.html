@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Каталог эмодзи</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#2c3e50">
+</head>
+<body>
+    <header class="navbar">
+        <div class="container">
+            <div class="logo">😊 <span>Emoji Hub</span></div>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span class="hamburger"></span>
+            </button>
+            <nav class="nav-menu">
+                <button class="nav-close" aria-label="Закрыть меню">&times;</button>
+                <a href="index.html">Главная</a>
+                <a href="catalog.html" class="active">Каталог</a>
+                <a href="moodboard.html">MoodBoard</a>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+        <!-- Управления -->
+            <div class="controls">
+                <input id="search" type="text" placeholder="Поиск по имени..." />
+                <label for="category">Категория:</label>
+                <select id="category">
+                    <option value="">Все категории</option>
+                </select>
+                <label for="sort">Сортировка:</label>
+                <select id="sort">
+                    <option value="name-asc">Имя A→Z</option>
+                    <option value="name-desc">Имя Z→A</option>
+                </select>
+            </div>
+            <div id="grid" class="grid"></div>
+        </div>
+    </main>
+    <script src="catalog.js"></script>
+    <script src="register-sw.js"></script>
+
+</body>
+<script>
+    const toggleBtn = document.querySelector('.nav-toggle');
+    const closeBtn  = document.querySelector('.nav-close');
+    const menu      = document.querySelector('.nav-menu');
+
+    toggleBtn.addEventListener('click', () => {
+        menu.classList.toggle('nav-menu_visible');
+    });
+
+    closeBtn.addEventListener('click', () => {
+        menu.classList.remove('nav-menu_visible');
+    });
+</script>
+
+</html>

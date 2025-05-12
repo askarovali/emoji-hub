@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emoji Hub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#2c3e50">
+</head>
+<body>
+    <header class="navbar">
+        <div class="container">
+            <div class="logo">😊 <span>Emoji Hub</span></div>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span class="hamburger"></span>
+            </button>
+            <nav class="nav-menu">
+                <button class="nav-close" aria-label="Закрыть меню">&times;</button>
+                <a href="index.html" class="active">Главная</a>
+                <a href="catalog.html">Каталог</a>
+                <a href="moodboard.html">MoodBoard</a>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <p>Добро пожаловать в Emoji Hub! Здесь вы можете просмотреть список эмодзи и создать свой MoodBoard.</p>
+        </div>
+    </main>
+    <script src="register-sw.js"></script>
+</body>
+<script>
+    const toggleBtn = document.querySelector('.nav-toggle');
+    const closeBtn  = document.querySelector('.nav-close');
+    const menu      = document.querySelector('.nav-menu');
+
+    toggleBtn.addEventListener('click', () => {
+        menu.classList.toggle('nav-menu_visible');
+    });
+
+    closeBtn.addEventListener('click', () => {
+        menu.classList.remove('nav-menu_visible');
+    });
+</script>
+
+</html>
